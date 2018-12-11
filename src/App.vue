@@ -1,18 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div class="ceshi ">
-      <div v-for="(item,index) in demo" :key="index">{{item}}</div>
-    </div>
-    <button @click="arrFn()">数组Push</button>
-    <div v-for="(item,index) in obj" :key="index" v-if="!item.isShow">
-      {{item.list}}{{item.name}}
-    </div>
-    <button @click="objFn">对象Push</button>
     <router-view></router-view>
   </div>
 </template>
-
 <script>
 export default {
   name: 'App',
@@ -45,13 +35,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: $mainCol;
+  @include fz(16px);
+  margin-top: torem(120px);
 }
 </style>
